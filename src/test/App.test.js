@@ -24,4 +24,17 @@ describe('App testing', () => {
         expect(footer).toHaveLength(1);
         expect(footer.exists()).ok;
     }) 
+    it('Check app should have a cameralist state', () =>{
+        const appWrapper = shallow(<App />);
+    
+        expect(appWrapper.state().cameraList).toBeDefined();
+    })
+
+    it('Check app should have a cameralist state', () =>{
+        const appWrapper = shallow(<App />);
+        const mainWrapper = appWrapper.find(Main);
+    
+        expect(mainWrapper.props().cameraList).toBeDefined();
+    })
+
 });
